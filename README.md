@@ -26,7 +26,7 @@ For all the scripts, the argument `--help` can be provided to get a printout of 
 
 ### 1. Prepare the dataset
 
-Unzip the synthetic dataset from [10.25403/UPresearchdata.28391708](10.25403/UPresearchdata.28391708) into the `raw_synthetic_data` folder and process the synthetic data into a YOLO format with:
+Unzip the synthetic dataset from [10.25403/UPresearchdata.28391708](http://doi.org/10.25403/UPresearchdata.28391708) into the `raw_synthetic_data` folder and process the synthetic data into a YOLO format with:
 
 ```bash
 python 1_create_synthetic_dataset.py --input raw_synthetic_data --output synthetic_data --negative
