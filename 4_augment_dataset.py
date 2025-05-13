@@ -19,7 +19,7 @@ def _parse_arguments():
     )
 
     parser.add_argument(
-        "-g", "--gaussian",
+        "-b", "--blurring",
         help="The sigma of the gaussian blurring that should be added",
         default=0,
         type=float
@@ -36,10 +36,10 @@ def _parse_arguments():
     
     args["input"] = os.path.abspath(args["input"])
     args["output"] = os.path.abspath(args["output"])
-    args["gaussian"] = float(args["gaussian"])
+    args["blurring"] = float(args["blurring"])
     args["noise"] = float(args["noise"])
 
-    if args["gaussian"] == 0 and args["noise"] == 0:
+    if args["blurring"] == 0 and args["noise"] == 0:
         print("No gaussian or noise value was specified")
         exit()
 
@@ -98,8 +98,8 @@ def main():
 
         img = cv2.imread(os.path.join(train_path, image_file), cv2.IMREAD_UNCHANGED)
 
-        if program_arguments["gaussian"] != 0:
-            img = _add_gaussian_blur(img, program_arguments["gaussian"])
+        if program_arguments["blurring"] != 0:
+            img = _add_gaussian_blur(img, program_arguments["blurring"])
 
         if program_arguments["noise"] != 0:
             img = _add_gaussian_noise(img, program_arguments["noise"])
