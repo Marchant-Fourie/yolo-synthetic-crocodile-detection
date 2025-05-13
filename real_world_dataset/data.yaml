@@ -1,0 +1,6 @@
+path: <absolute_path_to_folder/real_world_data>
+train: images/train
+val: images/val
+
+names:
+  0: crocodile
