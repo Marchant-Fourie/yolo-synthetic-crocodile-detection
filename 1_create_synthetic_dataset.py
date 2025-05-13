@@ -148,55 +148,6 @@ def _scale_image_and_polygons(image: np.ndarray, polygons: list, scale: float) -
 
     return image, output_polygons
 
-# def draw_annotations_on_image(annotations, image):
-
-#     for line in annotations.split("\n"):
-        
-#         if line.replace(" ", "") == "" :
-#             continue
-
-#         _, center_x, center_y, width, height = line.split(" ")
-
-#         center_x = float(center_x)*TARGET_WIDTH
-#         center_y = float(center_y)*TARGET_HEIGHT
-#         width = float(width)*TARGET_WIDTH
-#         height = float(height)*TARGET_HEIGHT
-
-#         left = np.clip(int(center_x - width/2), 0, TARGET_WIDTH - 1)
-#         right = np.clip(int(center_x + width/2), 0, TARGET_WIDTH - 1)
-#         top = np.clip(int(center_y - height/2), 0, TARGET_HEIGHT - 1)
-#         bottom = np.clip(int(center_y + height/2), 0, TARGET_HEIGHT - 1)
-
-#         image = draw_rect([left, top, right, bottom], image)
-
-#     return image
-
-# def draw_rect(box, image):
-
-#     left, top, right, bottom = box
-
-#     for x in range(left, right):
-        
-#         image[top, x, 2] = 255
-#         image[top, x, 1] = 0
-#         image[top, x, 0] = 0
-
-#         image[bottom, x, 2] = 255
-#         image[bottom, x, 1] = 0
-#         image[bottom, x, 0] = 0
-
-#     for y in range(top, bottom):
-        
-#         image[y, left, 2] = 255
-#         image[y, left, 1] = 0
-#         image[y, left, 0] = 0
-
-#         image[y, right, 2] = 255
-#         image[y, right, 1] = 0
-#         image[y, right, 0] = 0
-
-#     return image
-
 def main():
 
     program_arguments = _parse_arguments()
